@@ -2,6 +2,31 @@
 <body>
 {{#userName}}
     Hello, {{.}}
+    <form action="/add-message" method="post">
+        <input type="text" placeholder="Write a message" name="message"/>
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/edit-message" method="post">
+        <input type="text" placeholder="Message #" name="editId"/>
+        <input type="text" placeholder="Edit message text" name="editMessage">
+        <button type="submit">Edit</button>
+    </form>
+    <form action="/delete-message" method="post">
+        <input type="text" placeholder="Message #" name="deleteId">
+        <button type="delete">Delete</button>
+    </form>
+    Edit message</br>
+
+    Messages by {{userName}}:</br>
+    {{^messages}}
+        No messages found.
+    {{/messages}}
+
+    {{#messages}}
+            {{id}}. {{text}} </br>
+    {{/messages}}
+
+
 {{/userName}}
 
 {{^userName}}

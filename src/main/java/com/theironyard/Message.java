@@ -11,8 +11,8 @@ import javax.persistence.Id;
 public class Message {
     @Id
     @GeneratedValue
-    private int id;
-    private String text;
+     int id;
+     String text;
 
     public Message(int id, String text) {
         this.id = id;
@@ -20,6 +20,10 @@ public class Message {
     }
 
     public Message(){
+    }
+
+    public Message(String text){
+        this.text = text;
     }
 
     public int getId() {
