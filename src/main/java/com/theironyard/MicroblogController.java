@@ -15,30 +15,31 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class MicroblogController{
-    @Autowired
+    //@Autowired
     //MessageRepository messages;
 
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String home(HttpSession session, Model model){
-        User user = (User)session.getAttribute("User");
+    public String home(Model model, HttpSession session){
+        //User user = (User)session.getAttribute("User");
 
-        if(user == null){
-            return "redirect:/login";
-        }
+        //if(user == null){
+        //    return "redirect:/login";
+        //}
 
-        model.addAttribute("name", session.getAttribute("userName"));
+        model.addAttribute("userName", session.getAttribute("userName"));
         return "home";
     }
-
+/*
     @RequestMapping(path = "/login", method = RequestMethod.GET)
     public String login(){
         return "login";
     }
+    */
     @RequestMapping(path="/login", method = RequestMethod.POST)
-    public String loginUser(HttpSession session, String userName, String password){
+    public String loginUser(HttpSession session, String userName/*, String password*/){
         session.setAttribute("userName", userName);
-        session.setAttribute("password", password);
+        //session.setAttribute("password", password);
         return "redirect:/";
     }
 
