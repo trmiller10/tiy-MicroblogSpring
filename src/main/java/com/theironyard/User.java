@@ -3,6 +3,7 @@ package com.theironyard;
 /**
  * Created by Taylor on 5/21/16.
  */
+/*
 public class User {
     private String name;
     private String password;
@@ -28,3 +29,4 @@ public class User {
         this.password = password;
     }
 }
+*/
