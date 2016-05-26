@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class MicroblogController{
     @Autowired
-    MessageRepository messages;
+    //MessageRepository messages;
 
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
